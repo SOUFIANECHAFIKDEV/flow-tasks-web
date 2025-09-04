@@ -1,41 +1,68 @@
 # 🌐 Flow Tasks Web (Frontend)
 
-Frontend for the **Flow Tasks App** — a responsive task manager built with **Angular 20** and **Angular Material**.
+Frontend de l’application **Flow Tasks** — un gestionnaire de tâches responsive développé avec **Angular 20** et **Angular Material**.
 
 ---
 
-## 🚀 Features
-- ✅ Angular standalone components + signals
-- ✅ Task list with pagination and sorting
-- ✅ Search and filter by **title, status, and assignee**
-- ✅ Add task via modal dialog
-- ✅ Update task status with confirmation popup
-- ✅ Delete task with confirmation popup
-- ✅ Snackbar notifications (success/info/error)
-- ✅ Responsive layout (desktop & mobile)
-- ✅ Custom Angular Material theme
+## 🚀 Fonctionnalités
+- ✅ Composants standalone Angular + signals
+- ✅ Liste des tâches avec pagination et tri
+- ✅ Recherche et filtrage par **titre, statut et assigné à**
+- ✅ Ajout d’une tâche via une boîte de dialogue (modal)
+- ✅ Mise à jour du statut avec fenêtre de confirmation
+- ✅ Suppression avec fenêtre de confirmation
+- ✅ Notifications snackbar (succès / info / erreur)
+- ✅ Mise en page responsive (bureau & mobile)
+- ✅ Thème personnalisé Angular Material
 
 ---
 
-## 🛠️ Tech Stack
-- **Framework**: Angular 20
-- **UI Library**: Angular Material
-- **State**: Angular Signals
-- **HTTP**: Angular HttpClient + interceptors
-- **Dev Tooling**: Vite (dev server), SCSS
+## 🛠️ Stack Technique
+- **Framework** : Angular 20  
+- **UI** : Angular Material  
+- **État** : Angular Signals  
+- **HTTP** : Angular HttpClient + interceptors  
+- **Outils Dev** : Vite (serveur de dev), SCSS  
 
 ---
 
-## ▶️ Run Locally
+## ▶️ Lancer le projet en local
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) (>= 18)
-- [Angular CLI](https://angular.dev/tools/cli) (>= 20)
+### Prérequis
+- [Node.js](https://nodejs.org/) (>= 18)  
+- [Angular CLI](https://angular.dev/tools/cli) (>= 20)  
 
-### Steps
+### Étapes
 ```bash
-# Install dependencies
+# Installer les dépendances
 npm install
 
-# Start dev server
+# Lancer le serveur de dev
 ng serve -o
+➡️ L’application est disponible sur : http://localhost:4200
+
+⚠️ Assurez-vous que l’API backend tourne sur : https://localhost:7121
+
+📂 Composants Principaux
+TasksPageComponent – Page principale (pagination, filtres, actions)
+
+TaskFormComponent – Formulaire d’ajout de tâches
+
+TaskListComponent – Tableau affichant les tâches
+
+AddTaskDialogComponent – Modal pour ajouter une tâche
+
+UpdateStatusDialogComponent – Modal pour mettre à jour un statut
+
+ConfirmDialogComponent – Fenêtre de confirmation réutilisable
+
+🎨 Thème
+Couleur primaire : #043333
+
+Couleur secondaire : #ffb4a7
+
+Définies dans src/styles.scss
+
+📸 Captures d’écran
+
+<img width="953" height="437" alt="image" src="https://github.com/user-attachments/assets/f5c9b3ba-590d-4cc3-961e-d3c0ee480013" />
