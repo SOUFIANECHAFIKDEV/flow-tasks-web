@@ -33,7 +33,6 @@ Frontend de l’application **Flow Tasks** — un gestionnaire de tâches respon
 - [Angular CLI](https://angular.dev/tools/cli) (>= 20)  
 
 ### Étapes
-```bash
 # Installer les dépendances
 npm install
 
@@ -41,9 +40,9 @@ npm install
 ng serve -o
 ➡️ L’application est disponible sur : http://localhost:4200
 
-⚠️ Assurez-vous que l’API backend tourne sur : https://localhost:7121
+### ⚠️ Assurez-vous que l’API backend tourne sur : https://localhost:7121
 
-📂 Composants Principaux
+### 📂 Composants Principaux
 TasksPageComponent – Page principale (pagination, filtres, actions)
 
 TaskFormComponent – Formulaire d’ajout de tâches
@@ -56,13 +55,10 @@ UpdateStatusDialogComponent – Modal pour mettre à jour un statut
 
 ConfirmDialogComponent – Fenêtre de confirmation réutilisable
 
-🎨 Thème
+### 🎨 Thème
 Couleur primaire : #043333
 
 Couleur secondaire : #ffb4a7
 
 Définies dans src/styles.scss
 
-📸 Captures d’écran
-
-<img width="953" height="437" alt="image" src="https://github.com/user-attachments/assets/f5c9b3ba-590d-4cc3-961e-d3c0ee480013" />
