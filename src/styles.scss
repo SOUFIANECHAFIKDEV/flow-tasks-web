@@ -1,1 +1,82 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, Arial, sans-serif;
+    background: #fafafa;
+}
+
+mat-card {
+    padding: 16px;
+}
+
+.snack-success {
+    background: #2e7d32;
+    color: #fff;
+}
+
+.snack-info {
+    background: #1565c0;
+    color: #fff;
+}
+
+.snack-error {
+    background: #c62828;
+    color: #fff;
+}
+
+
+
+/* Couleur de la toolbar (menu top) */
+mat-toolbar {
+    background-color: #043333 !important;
+    color: #fff !important;
+}
+
+/* Couleur primaire pour toute l'app */
+:root {
+    --mat-primary: #043333;
+}
+
+.mat-mdc-raised-button.mat-primary,
+.mat-mdc-outlined-button.mat-primary,
+.mat-mdc-fab.mat-primary,
+.mat-mdc-mini-fab.mat-primary {
+    background-color: #043333 !important;
+    border-color: #043333 !important;
+    color: #fff !important;
+}
+
+.mat-mdc-progress-bar.mat-primary .mdc-linear-progress__bar-inner {
+    border-color: #043333 !important;
+}
+
+/* Toolbar (menu top) en couleur primaire */
+mat-toolbar {
+  background-color: #043333 !important;
+  color: #fff !important;
+}
+
+/* Boutons primaires → #043333 */
+.mat-mdc-raised-button.mat-primary,
+.mat-mdc-outlined-button.mat-primary,
+.mat-mdc-fab.mat-primary,
+.mat-mdc-mini-fab.mat-primary {
+  background-color: #043333 !important;
+  border-color: #043333 !important;
+  color: #fff !important;
+}
+
+/* Boutons secondaires (accent) → #ffb4a7 */
+.mat-mdc-raised-button.mat-accent,
+.mat-mdc-outlined-button.mat-accent,
+.mat-mdc-fab.mat-accent,
+.mat-mdc-mini-fab.mat-accent {
+  background-color: #ffb4a7 !important;
+  border-color: #ffb4a7 !important;
+  color: #000 !important; /* texte noir pour contraste */
+}

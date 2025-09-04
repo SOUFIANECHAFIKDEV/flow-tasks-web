@@ -1,7 +1,16 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { App } from './app/app';
-import { config } from './app/app.config.server';
+import { bootstrapApplication } from '@angular/platform-browser';      // <-- not platform-server
+import { provideServerRendering } from '@angular/platform-server';
+import { AppComponent } from './app/app.component';
+import { appConfig } from './app/app.config';
 
-const bootstrap = () => bootstrapApplication(App, config);
+const serverConfig = {
+  ...appConfig,
+  providers: [
+    ...(appConfig.providers ?? []),
+    provideServerRendering(),   // <--- critical for SSR
+  ],
+};
 
-export default bootstrap;
+export default function bootstrap() {
+  return bootstrapApplication(AppComponent, serverConfig);
+}
