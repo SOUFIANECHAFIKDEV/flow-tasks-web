@@ -1,6 +1,7 @@
 # 🌐 Flow Tasks Web (Frontend)
 
 Frontend de l’application **Flow Tasks** — un gestionnaire de tâches responsive développé avec **Angular 20** et **Angular Material**.
+
 ![App Screenshot](assets/screenshot.png)
 ---
 
