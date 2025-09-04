@@ -1,59 +1,41 @@
-# FlowTasksWeb
+# 🌐 Flow Tasks Web (Frontend)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.1.
+Frontend for the **Flow Tasks App** — a responsive task manager built with **Angular 20** and **Angular Material**.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Features
+- ✅ Angular standalone components + signals
+- ✅ Task list with pagination and sorting
+- ✅ Search and filter by **title, status, and assignee**
+- ✅ Add task via modal dialog
+- ✅ Update task status with confirmation popup
+- ✅ Delete task with confirmation popup
+- ✅ Snackbar notifications (success/info/error)
+- ✅ Responsive layout (desktop & mobile)
+- ✅ Custom Angular Material theme
 
+---
+
+## 🛠️ Tech Stack
+- **Framework**: Angular 20
+- **UI Library**: Angular Material
+- **State**: Angular Signals
+- **HTTP**: Angular HttpClient + interceptors
+- **Dev Tooling**: Vite (dev server), SCSS
+
+---
+
+## ▶️ Run Locally
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) (>= 18)
+- [Angular CLI](https://angular.dev/tools/cli) (>= 20)
+
+### Steps
 ```bash
-ng serve
-```
+# Install dependencies
+npm install
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+# Start dev server
+ng serve -o
