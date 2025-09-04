@@ -1,0 +1,107 @@
+    .container {
+        max-width: 75%;
+        margin: 24px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding-bottom: 34px
+    }
+
+    h2 {
+        margin: 0 0 12px
+    }
+
+    .sort-label {
+        opacity: .8;
+        margin-right: 4px
+    }
+
+    .paginator {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin: 8px 0;
+        flex-wrap: wrap
+    }
+
+    .paginator .total {
+        margin-left: 8px;
+        opacity: .75
+    }
+
+    .paginator .size-select {
+        width: 110px;
+        margin-left: auto
+    }
+
+    .paginator.bottom {
+        margin-top: 16px
+    }
+
+    .button-row {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+
+    .filters-container {
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .filters-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: mat-primary;
+    }
+
+    .filter-input {
+        width: 32%;
+    }
+
+    .filters {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .filter-panel {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    .sorting {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        padding: 0 0 15px 0;
+    }
+
+    .sorting .spacer {
+        flex: 1;
+    }
+
+    .small-size-btn {
+        font-size: 10px !important;
+        padding: 0 0.5rem;
+    }
+
+    .header-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+    }
+
+    .header-row h2 {
+        margin: 0;
+    }
+
+    .header-row .spacer {
+        flex: 1;
+    }

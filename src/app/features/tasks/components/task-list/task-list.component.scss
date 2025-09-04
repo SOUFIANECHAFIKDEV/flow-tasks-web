@@ -1,0 +1,45 @@
+    .full {
+        width: 100%;
+        overflow: auto
+    }
+
+    .actions {
+        display: flex;
+        gap: 8px;
+        padding: 1em 0 1em 0;
+    }
+
+    .no-data {
+        text-align: center;
+        color: #777;
+        font-size: 16px;
+        margin: 24px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .status {
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: white;
+
+        &.todo {
+            background-color: #f44336; // rouge
+        }
+
+        &.in-progress {
+            background-color: #ff9800; // orange
+        }
+
+        &.done {
+            background-color: #4caf50; // vert
+        }
+
+        &.unknown {
+            background-color: #9e9e9e; // gris
+        }
+    }

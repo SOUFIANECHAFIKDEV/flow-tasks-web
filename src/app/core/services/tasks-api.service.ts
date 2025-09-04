@@ -27,7 +27,7 @@ export class TasksApiService {
     if (sortDir) params = params.set('desc', sortDir == 'desc');
     if (q) params = params.set('search', q);
     if (status !== undefined) params = params.set('status', status);
-    if (assignedTo) params = params.set('assignedTo', assignedTo);
+    if (assignedTo) params = params.set('AssignedUserId', assignedTo);
     return this.http.get<PagedResult<Task>>(`${this.base}/tasks`, { params });
   }
 

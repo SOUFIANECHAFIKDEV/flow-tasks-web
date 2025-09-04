@@ -1,0 +1,63 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="form">
+    <!-- Titre -->
+    <mat-form-field appearance="outline">
+        <mat-label>Titre</mat-label>
+        <input matInput formControlName="title" maxlength="120" required>
+        <mat-hint align="end">{{ form.get('title')?.value?.length || 0 }} / 120</mat-hint>
+
+        <mat-error *ngIf="fc.title.touched && fc.title.hasError('required')">
+            Le titre est obligatoire.
+        </mat-error>
+        <mat-error *ngIf="fc.title.touched && fc.title.hasError('maxlength')">
+            Maximum 120 caractères.
+        </mat-error>
+    </mat-form-field>
+
+    <!-- Description -->
+    <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput rows="3" formControlName="description" maxlength="255" required></textarea>
+        <mat-hint align="end">{{ form.get('description')?.value?.length || 0 }} / 255</mat-hint>
+
+        <mat-error *ngIf="fc.description.touched && fc.description.hasError('required')">
+            La description est obligatoire.
+        </mat-error>
+        <mat-error *ngIf="fc.description.touched && fc.description.hasError('maxlength')">
+            Maximum 255 caractères.
+        </mat-error>
+    </mat-form-field>
+
+    <!-- Assigné à -->
+    <mat-form-field appearance="outline">
+        <mat-label>Assigné à</mat-label>
+        <mat-select formControlName="assignedUserId" required>
+            <mat-option [value]="null">-- Aucun --</mat-option>
+            <mat-option *ngFor="let user of users" [value]="user.id">
+                {{ user.firstName }} {{ user.lastName }} ({{ user.email }})
+            </mat-option>
+        </mat-select>
+
+        <mat-error *ngIf="fc.assignedUserId.touched && fc.assignedUserId.hasError('required')">
+            Veuillez sélectionner un utilisateur (ou choisir “Aucun”).
+        </mat-error>
+    </mat-form-field>
+
+    <!-- Statut -->
+    <mat-form-field appearance="outline">
+        <mat-label>Statut initial</mat-label>
+        <mat-select formControlName="status" required>
+            <mat-option [value]="null">Par défaut (À faire)</mat-option>
+            <mat-option [value]="TaskState.Todo">À faire</mat-option>
+            <mat-option [value]="TaskState.InProgress">En cours</mat-option>
+            <mat-option [value]="TaskState.Done">Complété</mat-option>
+        </mat-select>
+
+        <mat-error *ngIf="fc.status.touched && fc.status.hasError('required')">
+            Le statut est obligatoire.
+        </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">
+        Ajouter
+    </button>
+</form>

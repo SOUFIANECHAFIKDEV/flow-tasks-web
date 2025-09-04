@@ -1,0 +1,120 @@
+<div class="container">
+    <mat-card>
+        <div class="header-row">
+            <h2>Liste des tâches</h2>
+            <span class="spacer"></span>
+            <button mat-raised-button color="accent" (click)="addTask()">
+                <mat-icon>add</mat-icon>
+                Ajouter une tâche
+            </button>
+        </div>
+
+        <!-- Filtres -->
+        <mat-expansion-panel class="filter-panel">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    🔍 Filtres de recherche
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div class="filters">
+                <mat-form-field appearance="outline" class="filter-input">
+                    <mat-label>Recherche</mat-label>
+                    <input matInput placeholder="Titre / description" [(ngModel)]="q">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="filter-input">
+                    <mat-label>Statut</mat-label>
+                    <mat-select [(value)]="statusFilter">
+                        <mat-option [value]="null">Tous</mat-option>
+                        <mat-option [value]="TaskState.Todo">À faire</mat-option>
+                        <mat-option [value]="TaskState.InProgress">En cours</mat-option>
+                        <mat-option [value]="TaskState.Done">Complété</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="filter-input">
+                    <mat-label>Assigné à</mat-label>
+
+                    <mat-select [(ngModel)]="assignedTo">
+                        <mat-option [value]="null">-- Aucun --</mat-option>
+                        <mat-option *ngFor="let user of users" [value]="user.id">
+                            {{ user.firstName }} {{ user.lastName }} ({{ user.email }})
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <!-- Boutons alignés à droite -->
+            <div class="button-row">
+                <button mat-stroked-button color="primary" (click)="applyFilters()">
+                    <mat-icon>search</mat-icon>
+                    Rechercher
+                </button>
+
+                <button mat-stroked-button (click)="resetFilters()">
+                    <mat-icon>restart_alt</mat-icon>
+                    Réinitialiser
+                </button>
+            </div>
+
+        </mat-expansion-panel>
+
+        <!-- Tri -->
+        <div class="sorting">
+            <span class="sort-label">Trier par :</span>
+
+            <button mat-stroked-button class="small-size-btn"
+                [color]="sortBy() === 'createdAtUtc' ? 'primary' : undefined" (click)="setSort('createdAtUtc')">
+                Date de création {{ sortBy() === 'createdAtUtc' ? (sortDir() === 'desc' ? '↑' : '↓') : '' }}
+            </button>
+
+            <button mat-stroked-button class="small-size-btn" [color]="sortBy() === 'title' ? 'primary' : undefined"
+                (click)="setSort('title')">
+                Titre {{ sortBy() === 'title' ? (sortDir() === 'asc' ? '↑' : '↓') : '' }}
+            </button>
+
+            <button mat-stroked-button class="small-size-btn"
+                [color]="sortBy() === 'assignedTo' ? 'primary' : undefined" (click)="setSort('assignedTo')">
+                Assigné à {{ sortBy() === 'assignedTo' ? (sortDir() === 'asc' ? '↑' : '↓') : '' }}
+            </button>
+
+            <button mat-stroked-button class="small-size-btn" [color]="sortBy() === 'status' ? 'primary' : undefined"
+                (click)="setSort('status')">
+                Statut {{ sortBy() === 'status' ? (sortDir() === 'asc' ? '↑' : '↓') : '' }}
+            </button>
+
+        </div>
+
+
+        <!-- Table -->
+        <app-task-list [tasks]="tasks()" (requestUpdateStatus)="openUpdateStatusDialog($event)"
+            (requestDelete)="confirmDelete($event)">
+        </app-task-list>
+
+        <!-- Pagination bottom -->
+        <div class="paginator bottom">
+            <button mat-stroked-button (click)="prev()" [disabled]="page()<=1">←</button>
+
+            <ng-container *ngFor="let p of pageNumbers()">
+                <button mat-button [color]="p === page() ? 'primary' : undefined" [disabled]="p === page()"
+                    (click)="goTo(p)">{{p}}</button>
+            </ng-container>
+
+            <button mat-stroked-button (click)="next()" [disabled]="page()>=totalPages()">→</button>
+
+            <span class="total">({{total()}} éléments)</span>
+
+            <mat-form-field appearance="outline" class="size-select">
+                <mat-label>Taille</mat-label>
+                <mat-select [(value)]="pageSizeValue" (selectionChange)="changePageSize()">
+                    <mat-option [value]="5">5</mat-option>
+                    <mat-option [value]="10">10</mat-option>
+                    <mat-option [value]="20">20</mat-option>
+                    <mat-option [value]="50">50</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+    </mat-card>
+</div>
